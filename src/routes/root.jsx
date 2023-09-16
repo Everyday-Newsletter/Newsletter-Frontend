@@ -7,19 +7,15 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Typewriting from "../components/typeAnimation";
 
 export default function Newsletter() {
   const curDate = new Date()
   const [loading, setLoading] = React.useState(false);
   const checkTime = (date) => {
     const hours = date.getHours()
-    if(hours >= 0 && hours < 12){
-      return ("Good Morning! :D")
-    } else if(hours < 17){
-      return ("Good Afternoon! :D")
-    } else {
-      return("Good Night! :D")
-    }
+    let map = ["Morning", "Afternoon", "Evening", "Night"]
+    return(<Typewriting />)
   }
 
 
