@@ -9,15 +9,14 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Typewriting from "../components/typeAnimation";
 
-export default function Newsletter() {
-  const curDate = new Date()
+export default function Root() {
+  const curDate = new Date();
   const [loading, setLoading] = React.useState(false);
   const checkTime = (date) => {
-    const hours = date.getHours()
-    let map = ["Morning", "Afternoon", "Evening", "Night"]
-    return(<Typewriting />)
-  }
-
+    // const hours = date.getHours();
+    // let map = ["Morning", "Afternoon", "Evening", "Night"];
+    return <Typewriting />;
+  };
 
   const formSubmit = (/* event */) => {
     // console.log(event);

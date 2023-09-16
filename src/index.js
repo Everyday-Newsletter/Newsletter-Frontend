@@ -6,25 +6,28 @@ import "./index.css";
 import App from "./App";
 
 // Routes
-import Root from "./routes/root";
+// import Root from "./routes/root";
+import Landing from "./routes/landing";
 import News from "./routes/news";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Landing />,
   },
   {
     path: "/newsletter",
-    element: <News />,
+    element: (
+      <App>
+        <News />
+      </App>
+    ),
   },
 ]);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App>
-      <RouterProvider router={router} />
-    </App>
+    <RouterProvider router={router} />
   </React.StrictMode>,
-  document.getElementById("root"),
+  document.getElementById("root")
 );

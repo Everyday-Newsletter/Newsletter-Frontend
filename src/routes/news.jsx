@@ -11,5 +11,5 @@ export default function Newsletter() {
     window.location.replace("/");
   }
 
-  return <>Nice to hear that you are feeling {userFeelings}</>;
+  return <div>Nice to hear that you are feeling {userFeelings}</div>;
 }
