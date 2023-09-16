@@ -52,6 +52,9 @@ export default function App() {
 
       <main>
         <Container maxWidth="sm">
+          <Typography variant="h3" align="center" color="inherit" noWrap>
+            Good Morning
+          </Typography>
           <Stack
             component="form"
             sx={{ pt: 4 }}
