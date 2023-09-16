@@ -8,13 +8,14 @@ import Typography from "@mui/material/Typography";
 import AppBar from "@mui/material/AppBar";
 
 const Copyright = () => {
+  const todayDate = new Date()
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://everyday-newsletter.vercel.app">
         Everyday Newsletter
       </Link>{" "}
-      {new Date().getFullYear()}
+      {todayDate.getFullYear()}
       {"."}
     </Typography>
   );

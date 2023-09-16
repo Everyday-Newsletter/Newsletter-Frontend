@@ -9,7 +9,19 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 export default function Newsletter() {
+  const curDate = new Date()
   const [loading, setLoading] = React.useState(false);
+  const checkTime = (date) => {
+    const hours = date.getHours()
+    if(hours >= 0 && hours < 12){
+      return ("Good Morning! :D")
+    } else if(hours < 17){
+      return ("Good Afternoon! :D")
+    } else {
+      return("Good Night! :D")
+    }
+  }
+
 
   const formSubmit = (/* event */) => {
     // console.log(event);
@@ -25,7 +37,7 @@ export default function Newsletter() {
     <>
       <Container maxWidth="sm">
         <Typography variant="h3" align="center" color="inherit" noWrap>
-          Good Morning
+          {checkTime(curDate)}
         </Typography>
         <Stack
           component="form"
