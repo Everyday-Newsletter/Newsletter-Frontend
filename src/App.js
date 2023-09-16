@@ -64,6 +64,7 @@ export default function App() {
               id="outlined-basic"
               label="How are you today?"
               name="feelings"
+              fullWidth
               variant="outlined"
               required
             />
