@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Everyday Newsletter",
+  "name": "An everyday newsletter curated for you.",
   "icons": [
     {
       "src": "favicon.ico",
