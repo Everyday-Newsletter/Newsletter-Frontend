@@ -1,5 +1,7 @@
-import * as React from "react";
+import React from "react";
+
 import AppBar from "@mui/material/AppBar";
+import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import TextField from "@mui/material/TextField";
@@ -11,20 +13,32 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="https://everyday-newsletter.vercel.app">
         Everyday Newsletter
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
   );
-}
+};
 
 export default function App() {
+  const [loading, setLoading] = React.useState(false);
+
+  const formSubmit = (event) => {
+    console.log(event);
+    event.preventDefault();
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
+
   return (
     <>
       <CssBaseline />
@@ -37,38 +51,34 @@ export default function App() {
       </AppBar>
 
       <main>
-        {/* Hero unit */}
-        <Box
-          sx={{
-            bgcolor: "background.paper",
-            pt: 8,
-            pb: 6,
-          }}
-        >
-          <Container maxWidth="sm">
-            <Stack
-              component="form"
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <TextField
-                id="outlined-basic"
-                label="How are you today?"
-                name="feelings"
-                variant="outlined"
-                required
-              />
-              <Button variant="contained" type="submit">
+        <Container maxWidth="sm">
+          <Stack
+            component="form"
+            sx={{ pt: 4 }}
+            direction="row"
+            spacing={2}
+            justifyContent="center"
+            onSubmit={formSubmit}
+          >
+            <TextField
+              id="outlined-basic"
+              label="How are you today?"
+              name="feelings"
+              variant="outlined"
+              required
+            />
+            <Button variant="contained" type="submit" disabled={loading}>
+              {loading ? (
+                <CircularProgress color="inherit" size={30} />
+              ) : (
                 <SendIcon />
-              </Button>
-            </Stack>
-          </Container>
-        </Box>
+              )}
+            </Button>
+          </Stack>
+        </Container>
       </main>
 
-      <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
+      <Box sx={{ p: 6 }} component="footer">
         <Typography
           variant="subtitle1"
           align="center"
