@@ -29,7 +29,7 @@ export default function Newsletter() {
         </Typography>
         <Stack
           component="form"
-          action="/news"
+          action="/newsletter"
           sx={{ pt: 4 }}
           direction="row"
           spacing={2}
