@@ -69,7 +69,6 @@ export default function App() {
               name="feelings"
               fullWidth
               variant="outlined"
-              required
             />
             <Button variant="contained" type="submit" disabled={loading}>
               {loading ? (
