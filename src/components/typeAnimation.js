@@ -3,21 +3,21 @@ import { TypeAnimation } from "react-type-animation";
 
 const TypeWriting = () => {
   return (
-    <Typography variant="h4" type="left" align="center" color="inherit" noWrap>
+    <Typography variant="h4" type="left" align="center" color="#FB8500" className="flex items-end !font-[modak]" noWrap>
       <TypeAnimation
         sequence={[
           "Beyond the Typical Newsletter!",
-          10000,
+          7000,
           "Uniquely Yours, Every Day!",
-          10000,
+          7000,
           "Privacy Being Paramount!",
-          10000,
+          7000,
           "Your Daily Guru!",
-          10000,
+          7000,
         ]}
         speed={50}
         repeat={Infinity}
-        style={{ fontSize: "1em" }}
+        style={{ font: "Modak", fontSize: "1em" }}
       />
     </Typography>
   );
