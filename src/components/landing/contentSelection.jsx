@@ -8,7 +8,7 @@ const SelectionComponent = ({ textContent, selected, toggleSelection }) => {
   return (
     <div
       onClick={toggleSelection}
-      className={`select-none cursor-pointer font-[poppins] py-5 px-6 text-6xl rounded-xl ${
+      className={`select-none cursor-pointer font-[poppins] py-5 px-6 text-4xl rounded-xl ${
         selected ? "bg-[#023047] text-white" : "bg-[#E3E3E3]"
       }`}
     >
@@ -39,7 +39,7 @@ export default function ContentSelection(props) {
       <h1 className="text-[#FB8500] text-8xl w-[69rem]">
         Great! What kind of content do you prefer?
       </h1>
-      <div className="flex flex-wrap relative gap-6 justify-center w-[80%]">
+      <div className="flex flex-wrap relative gap-4 justify-center w-[80%]">
         {Object.keys(selectionData).map((textContent, index) => (
           <SelectionComponent
             key={index}

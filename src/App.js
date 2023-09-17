@@ -27,7 +27,7 @@ const Copyright = () => {
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://everyday-newsletter.vercel.app">
-        Everyday Newsletter
+        DailyDive
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -88,7 +88,7 @@ export default function App(props) {
             noWrap
           >
             <LightModeIcon fontSize={"large"} className="mr-3" />
-            Everyday Newsletter
+            DailyDive
           </Typography>
           <div>
             <Button

@@ -4,13 +4,11 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 export default function BeginQuestionnaire(props) {
   return (
     <React.Fragment>
-      <h1 className="text-[11rem] leading-[11rem] text-[#FB8500] relative">
-        Everyday
+      <h1 className="text-[11rem] w-[60rem] leading-[11rem] text-[#FB8500] relative">
+        Daily Dive
         <span className="text-[8rem] absolute right-0 -top-10 animateSun">
           <LightModeIcon fontSize={"inherit"} />
         </span>
-        <br />
-        Newsletter
       </h1>
       <button
         onClick={() => {
