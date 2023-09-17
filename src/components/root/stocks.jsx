@@ -25,7 +25,7 @@ export default function Stocks() {
           ? stocks.map((nestedArray) =>
               nestedArray.map((stockImageBase64) => (
                 <img src={`data:image/png;base64,${stockImageBase64}`} />
-              ))
+              )),
             )
           : "Loading stocks.. Please wait!"}
       </div>
