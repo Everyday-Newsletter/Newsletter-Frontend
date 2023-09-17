@@ -6,7 +6,7 @@ export const defaultPreferenceData = {
   "Health 🌏": { active: false, category: "health" },
   "Entertainment 🤣": { active: false, category: "entertainment" },
   "Sports ⚽": { active: false, category: "sports" },
-  "Stocks 📈": { active: false, category: "business" },
+  "Business 📈": { active: false, category: "business" },
 };
 
 export const preferenceDataAtom = atomWithStorage(

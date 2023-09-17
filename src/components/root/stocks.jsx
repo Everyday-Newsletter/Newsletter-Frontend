@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Stocks() {
   const [stocks, setStocks] = React.useState([]);
@@ -21,13 +22,19 @@ export default function Stocks() {
         Stocks
       </h1>
       <div className="grid flex-wrap gap-4 grid-cols-2 font-[poppins]">
-        {stocks.length > 0
-          ? stocks.map((nestedArray) =>
-              nestedArray.map((stockImageBase64) => (
-                <img src={`data:image/png;base64,${stockImageBase64}`} />
-              )),
-            )
-          : "Loading stocks.. Please wait!"}
+        {stocks.length > 0 ? (
+          stocks.map((nestedArray) =>
+            nestedArray.map((stockImageBase64, index) => (
+              <img
+                key={index}
+                src={`data:image/png;base64,${stockImageBase64}`}
+                alt={`Stock image ${index}`}
+              />
+            )),
+          )
+        ) : (
+          <CircularProgress />
+        )}
       </div>
     </div>
   );

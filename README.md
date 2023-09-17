@@ -3,11 +3,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Clone the repo
+
 Run (where you want to initialize the repo):
 
 ```
 git clone https://github.com/Everyday-Newsletter/Newsletter-Frontend.git
 ```
+
 Navigate to Newsletter-Frontend
 
 ```

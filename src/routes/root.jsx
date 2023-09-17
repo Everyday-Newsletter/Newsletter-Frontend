@@ -34,7 +34,7 @@ export default function Root() {
               category={selectionData[preference].category}
             />
           ) : (
-            <></>
+            <React.Fragment key={index}></React.Fragment>
           ),
         )}
         <Stocks />
