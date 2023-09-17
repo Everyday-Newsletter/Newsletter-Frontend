@@ -7,24 +7,24 @@ import { useAtom } from "jotai";
 import { finishedOnboardingAtom } from "../atom";
 
 export default function Landing() {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
   // eslint-disable-next-line
   const [_finishedOnboarding, setFinishedOnboarding] = useAtom(
     finishedOnboardingAtom,
   );
-  const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide + 1);
   };
 
-  const finishAnimation = () => {
+  const finishOnboarding = () => {
     setFinishedOnboarding(true);
   };
 
   const pageSlides = [
     <BeginQuestionnaire nextSlide={nextSlide} />,
     <NameQuestionnaire nextSlide={nextSlide} />,
-    <ContentSelection nextSlide={finishAnimation} />,
+    <ContentSelection nextSlide={finishOnboarding} />,
   ];
 
   return (

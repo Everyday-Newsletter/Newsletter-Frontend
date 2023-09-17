@@ -21,10 +21,9 @@ export default function ContentSelection(props) {
   const [selectionData, setSelectionData] = useAtom(preferenceDataAtom);
 
   const toggleSelection = (textContent) => {
-    setSelectionData((prevSelectionData) => ({
-      ...prevSelectionData,
-      [textContent]: !prevSelectionData[textContent],
-    }));
+    const copiedSelection = { ...selectionData };
+    copiedSelection[textContent].active = !copiedSelection[textContent].active;
+    setSelectionData(copiedSelection);
   };
 
   const handleSubmit = () => {
@@ -32,7 +31,7 @@ export default function ContentSelection(props) {
   };
 
   const trueCount = Object.values(selectionData).filter(
-    (value) => value === true
+    (value) => value.active === true,
   ).length;
 
   return (
@@ -41,11 +40,11 @@ export default function ContentSelection(props) {
         Great! What kind of content do you prefer?
       </h1>
       <div className="flex flex-wrap relative gap-6 justify-center w-[80%]">
-        {Object.keys(selectionData).map((textContent) => (
+        {Object.keys(selectionData).map((textContent, index) => (
           <SelectionComponent
-            key={textContent}
+            key={index}
             textContent={textContent}
-            selected={selectionData[textContent]}
+            selected={selectionData[textContent].active}
             toggleSelection={() => toggleSelection(textContent)}
           />
         ))}
