@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Article from "./article";
 
-const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
-
 export default function Articles({ textContent, category }) {
   const [articles, setArticles] = useState([]);
   const [showAllArticles, setShowAllArticles] = useState(false); // Track whether to show all articles or not
 
   useEffect(() => {
     axios
-      .get(`${API_ENDPOINT}/news?category=${category}`)
+      .get(`${process.env.REACT_APP_API_ENDPOINT}/news?category=${category}`)
       .then((response) => {
         setArticles(response.data);
       })

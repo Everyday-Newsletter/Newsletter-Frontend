@@ -6,7 +6,10 @@ export default function Article({ imageUrl, description, title, url }) {
   return (
     <div className="container bg-slate-200 flex flex-col rounded-xl overflow-hidden">
       <img
-        src={imageUrl || "https://www.w3schools.com/howto/img_avatar.png"}
+        src={
+          imageUrl ||
+          "https://cdn.discordapp.com/attachments/1152092150159396924/1152829568563028059/2Q.png"
+        }
         alt={description}
         className="w-full h-48 object-top object-cover -mb-10"
       />

@@ -8,24 +8,25 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
-const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
-
 export default function MentalHealth() {
   const [loading, setLoading] = React.useState(false);
   const [response, setResponse] = React.useState("");
   const [message, setMessage] = React.useState("");
+  const [error, setError] = React.useState("");
 
   const formSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
 
     axios
-      .get(`${API_ENDPOINT}/mental_health?message=${message}`)
+      .get(
+        `${process.env.REACT_APP_API_ENDPOINT}/mental_health?message=${message}`,
+      )
       .then((response) => {
         setResponse(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        setError(`Error fetching data: ${error}`);
       })
       .finally(() => {
         setLoading(false);
@@ -70,6 +71,7 @@ export default function MentalHealth() {
           <SendIcon sx={{ color: "white" }} />
         )}
       </Button>
+      {error ? error : <></>}
     </Stack>
   );
 }
