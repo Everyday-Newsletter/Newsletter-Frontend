@@ -11,7 +11,7 @@ export const defaultPreferenceData = {
 
 export const preferenceDataAtom = atomWithStorage(
   "preferenceData",
-  defaultPreferenceData
+  defaultPreferenceData,
 );
 
 export const userNameAtom = atomWithStorage("name", "");

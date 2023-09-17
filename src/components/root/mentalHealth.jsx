@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
@@ -7,20 +8,28 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
+
 export default function MentalHealth() {
   const [loading, setLoading] = React.useState(false);
   const [response, setResponse] = React.useState("");
+  const [message, setMessage] = React.useState("");
 
   const formSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      setResponse(
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      );
-    }, 2000);
+    axios
+      .get(`${API_ENDPOINT}/mental_health?message=${message}`)
+      .then((response) => {
+        setResponse(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return response ? (
@@ -44,6 +53,10 @@ export default function MentalHealth() {
         name="feelings"
         fullWidth
         variant="outlined"
+        onChange={(e) => {
+          setMessage(e.target.value);
+        }}
+        value={message}
       />
       <Button
         variant="contained"

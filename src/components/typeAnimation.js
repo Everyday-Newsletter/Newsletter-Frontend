@@ -13,7 +13,7 @@ const TypeWriting = () => {
           "Privacy Being Paramount!",
           10000,
           "Your Daily Guru!",
-          10000
+          10000,
         ]}
         speed={50}
         repeat={Infinity}
