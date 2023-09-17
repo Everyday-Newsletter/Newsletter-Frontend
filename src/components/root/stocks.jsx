@@ -20,12 +20,14 @@ export default function Stocks() {
       <h1 className="text-primary text-5xl w-full border-b-2 border-[#023047]">
         Stocks
       </h1>
-      <div className="grid flex-wrap gap-4 grid-cols-2">
-        {stocks.map((nestedArray) =>
-          nestedArray.map((stockImageBase64) => (
-            <img src={`data:image/png;base64,${stockImageBase64}`} />
-          )),
-        )}
+      <div className="grid flex-wrap gap-4 grid-cols-2 font-[poppins]">
+        {stocks.length > 0
+          ? stocks.map((nestedArray) =>
+              nestedArray.map((stockImageBase64) => (
+                <img src={`data:image/png;base64,${stockImageBase64}`} />
+              ))
+            )
+          : "Loading stocks.. Please wait!"}
       </div>
     </div>
   );
