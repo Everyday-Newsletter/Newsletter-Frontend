@@ -32,7 +32,7 @@ export default function ContentSelection(props) {
   };
 
   const trueCount = Object.values(selectionData).filter(
-    (value) => value === true,
+    (value) => value === true
   ).length;
 
   return (
@@ -54,8 +54,10 @@ export default function ContentSelection(props) {
         type="submit"
         onClick={handleSubmit}
         disabled={trueCount === 0}
-        className={`flex rounded-3xl text-3xl w-32 justify-center text-white p-5 ${
-          trueCount !== 0 ? "bg-[#023047]" : "bg-[#E3E3E3] text-black"
+        className={`flex rounded-3xl text-3xl w-32 justify-center p-5 ${
+          trueCount !== 0
+            ? "bg-[#023047] text-white"
+            : "bg-[#E3E3E3] text-black"
         }`}
       >
         <Send fontSize="inherit" />

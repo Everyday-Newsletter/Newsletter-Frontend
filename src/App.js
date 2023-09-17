@@ -1,6 +1,7 @@
 import React from "react";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import Link from "@mui/material/Link";
@@ -74,8 +75,19 @@ export default function App(props) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar position="relative">
-        <Toolbar sx={{ justifyContent: "space-between", color: "white" }}>
-          <Typography variant="h6" color="inherit" noWrap>
+        <Toolbar
+          sx={{
+            justifyContent: "space-between",
+            color: "white",
+          }}
+        >
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="flex items-end"
+            noWrap
+          >
+            <LightModeIcon fontSize={"large"} className="mr-3" />
             Everyday Newsletter
           </Typography>
           <div>
