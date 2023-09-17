@@ -3,39 +3,40 @@ import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Stocks() {
-  const [stocks, setStocks] = React.useState([]);
+  // const [stocks, setStocks] = React.useState([]);
 
-  React.useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_ENDPOINT}/stocks`)
-      .then((response) => {
-        setStocks(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+  // React.useEffect(() => {
+  //   axios
+  //     .get(`${process.env.REACT_APP_API_ENDPOINT}/stocks`)
+  //     .then((response) => {
+  //       setStocks(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
 
-  return (
-    <div className="space-y-[2rem] flex flex-col items-center">
-      <h1 className="text-primary text-5xl w-full border-b-2 border-[#023047]">
-        Stocks
-      </h1>
-      <div className="grid flex-wrap gap-4 grid-cols-2 font-[poppins]">
-        {stocks.length > 0 ? (
-          stocks.map((nestedArray) =>
-            nestedArray.map((stockImageBase64, index) => (
-              <img
-                key={index}
-                src={`data:image/png;base64,${stockImageBase64}`}
-                alt={`Stock image ${index}`}
-              />
-            )),
-          )
-        ) : (
-          <CircularProgress />
-        )}
-      </div>
-    </div>
-  );
+  // return (
+  //   <div className="space-y-[2rem] flex flex-col items-center">
+  //     <h1 className="text-primary text-5xl w-full border-b-2 border-[#023047]">
+  //       Stocks
+  //     </h1>
+  //     <div className="grid flex-wrap gap-4 grid-cols-2 font-[poppins]">
+  //       {stocks.length > 0 ? (
+  //         stocks.map((nestedArray) =>
+  //           nestedArray.map((stockImageBase64, index) => (
+  //             <img
+  //               key={index}
+  //               src={`data:image/png;base64,${stockImageBase64}`}
+  //               alt={`Stock image ${index}`}
+  //             />
+  //           )),
+  //         )
+  //       ) : (
+  //         <CircularProgress />
+  //       )}
+  //     </div>
+  //   </div>
+  // );
+  return <></>;
 }
