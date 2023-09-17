@@ -2,6 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Clone the repo
+Run (where you want to initialize the repo):
+
+```
+git clone https://github.com/Everyday-Newsletter/Newsletter-Frontend.git
+```
+Navigate to Newsletter-Frontend
+
+```
+npm i
+npm start
+```
+
+**Note**: 'npm start' starts the local dev server. To utilize the full functionality of the website (with the backend) as a dev, please refer to the [README.md](https://github.com/Everyday-Newsletter/Newsletter-API/blob/main/README.md) here.
+
 ## Available Scripts
 
 In the project directory, you can run:
