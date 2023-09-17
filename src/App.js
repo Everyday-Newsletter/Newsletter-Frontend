@@ -74,7 +74,7 @@ export default function App(props) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="relative" relative={0}>
         <Toolbar
           sx={{
             justifyContent: "space-between",
