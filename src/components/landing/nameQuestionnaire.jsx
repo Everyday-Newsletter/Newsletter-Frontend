@@ -21,7 +21,7 @@ export default function NameQuestionnaire(props) {
       <h1 className="text-[#FB8500] text-8xl">What's your name?</h1>
       <form className="text-7xl flex space-x-16 ml-1/2" onSubmit={callSubmit}>
         <input
-          placeholder="John Hack The North"
+          placeholder="Duck Duck Goose"
           className="text-center font-[poppins] w-[52rem] bg-[#E3E3E3] outline-none rounded-3xl px-5"
           required
           autoFocus

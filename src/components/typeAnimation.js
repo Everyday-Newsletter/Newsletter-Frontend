@@ -7,11 +7,13 @@ const TypeWriting = () => {
       <TypeAnimation
         sequence={[
           "Beyond the Typical Newsletter!",
-          1000,
+          10000,
           "Uniquely Yours, Every Day!",
-          1000,
+          10000,
+          "Privacy Being Paramount!",
+          10000,
           "Your Daily Guru!",
-          1000,
+          10000
         ]}
         speed={50}
         repeat={Infinity}
