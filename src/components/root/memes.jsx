@@ -37,14 +37,14 @@ export default function Memes() {
   const rightColumn = memes.slice(midpoint);
 
   return (
-    <div className="flex flex-col items-center space-y-8">
+    <div className="flex flex-col items-center">
       <h1 className="text-primary text-5xl w-full border-b-2 border-[#023047]">
         Memes
       </h1>
       <div
         className={`flex ${
           memesHidden
-            ? "overflow-hidden max-h-[40rem] rounded-b-3xl space-y-8"
+            ? "overflow-hidden max-h-[40rem] rounded-b-3xl space-y-8 mt-8"
             : ""
         }`}
       >
@@ -87,7 +87,7 @@ export default function Memes() {
 
       {memesHidden && (
         <button
-          className="bg-secondary text-white py-5 px-6 font-[poppins] rounded-3xl w-40"
+          className="bg-secondary text-white py-5 px-6 font-[poppins] rounded-3xl w-40 mt-8"
           onClick={() => {
             unhideMemes();
           }}
