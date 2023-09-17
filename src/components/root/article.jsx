@@ -8,7 +8,7 @@ export default function Article({ imageUrl, description, title, url }) {
       <img
         src={
           imageUrl ||
-          "https://cdn.discordapp.com/attachments/1152092150159396924/1152829568563028059/2Q.png"
+          "https://media.discordapp.net/attachments/1152092150159396924/1152830085913640990/sitecore-9-dynamic-placeholders.png?width=1130&height=626"
         }
         alt={description}
         className="w-full h-48 object-top object-cover -mb-10"
