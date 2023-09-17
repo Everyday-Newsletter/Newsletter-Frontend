@@ -16,7 +16,7 @@ export default function BeginQuestionnaire(props) {
         onClick={() => {
           props.nextSlide();
         }}
-        className="mt-6 py-8 text-white bg-black w-[18.625rem] rounded-3xl text-4xl font-bold font-[inter]"
+        className="mt-6 py-8 text-white bg-[#023047] w-[18.625rem] rounded-3xl text-4xl font-bold font-[inter]"
       >
         Begin
       </button>

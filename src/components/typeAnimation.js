@@ -1,13 +1,9 @@
-import { Typography } from '@mui/material';
-import { TypeAnimation } from 'react-type-animation';
+import { Typography } from "@mui/material";
+import { TypeAnimation } from "react-type-animation";
 
 const TypeWriting = () => {
   return (
-    <Typography 
-    variant="h4"
-    type="left"
-    >
-    
+    <Typography variant="h4" type="left">
       <TypeAnimation
         sequence={[
           "Beyond the Typical Newsletter!",
@@ -15,11 +11,11 @@ const TypeWriting = () => {
           "Uniquely Yours, Every Day!",
           1000,
           "Your Daily Guru!",
-          1000
+          1000,
         ]}
         speed={50}
         repeat={Infinity}
-        style={{ fontSize: '1em' }}
+        style={{ fontSize: "1em" }}
       />
     </Typography>
   );

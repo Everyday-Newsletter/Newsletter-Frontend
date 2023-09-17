@@ -10,33 +10,36 @@ import Container from "@mui/material/Container";
 import Typewriting from "../components/typeAnimation";
 
 export default function Root() {
-  const curDate = new Date();
   const [loading, setLoading] = React.useState(false);
-  const checkTime = (date) => {
-    // const hours = date.getHours();
-    // let map = ["Morning", "Afternoon", "Evening", "Night"];
-    return <Typewriting />;
-  };
+  const [response, setResponse] = React.useState("");
 
-  const formSubmit = (/* event */) => {
-    // console.log(event);
-    // event.preventDefault();
+  const formSubmit = (event) => {
+    event.preventDefault();
     setLoading(true);
 
-    // setTimeout(() => {
-    // setLoading(false);
-    // }, 2000);
+    setTimeout(() => {
+      setLoading(false);
+      setResponse(
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      );
+    }, 2000);
   };
 
   return (
-    <>
-      <Container maxWidth="sm">
-        <Typography variant="h3" align="center" color="inherit" noWrap>
-          {checkTime(curDate)}
-        </Typography>
+    <Container maxWidth="sm">
+      <Typography variant="h3" align="center" color="inherit" noWrap>
+        <Typewriting />
+      </Typography>
+
+      {response ? (
+        <div className="mt-8">
+          <Typography className="bg-[#FB8500] text-white p-4 rounded-xl">
+            {response}
+          </Typography>
+        </div>
+      ) : (
         <Stack
           component="form"
-          action="/newsletter"
           sx={{ pt: 4 }}
           direction="row"
           spacing={2}
@@ -50,15 +53,20 @@ export default function Root() {
             fullWidth
             variant="outlined"
           />
-          <Button variant="contained" type="submit" disabled={loading}>
+          <Button
+            variant="contained"
+            type="submit"
+            disabled={loading}
+            className="bg-secondary"
+          >
             {loading ? (
               <CircularProgress color="inherit" size={30} />
             ) : (
-              <SendIcon />
+              <SendIcon sx={{ color: "white" }} />
             )}
           </Button>
         </Stack>
-      </Container>
-    </>
+      )}
+    </Container>
   );
 }
