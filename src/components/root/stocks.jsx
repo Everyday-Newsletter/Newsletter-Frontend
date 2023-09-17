@@ -20,18 +20,13 @@ export default function Stocks() {
       <h1 className="text-primary text-5xl w-full border-b-2 border-[#023047]">
         Stocks
       </h1>
-      <div
-        className="grid flex-wrap gap-4 md:grid-cols-2"
-        dangerouslySetInnerHTML={{
-          __html:
-            stocks.length > 0
-              ? stocks.replace(
-                  "/static",
-                  `${process.env.REACT_APP_API_ENDPOINT}/static`,
-                )
-              : "Loading...",
-        }}
-      ></div>
+      <div className="grid flex-wrap gap-4 grid-cols-3">
+        {stocks.map((nestedArray) =>
+          nestedArray.map((stockImageBase64) => (
+            <img src={`data:image/png;base64,${stockImageBase64}`} />
+          )),
+        )}
+      </div>
     </div>
   );
 }

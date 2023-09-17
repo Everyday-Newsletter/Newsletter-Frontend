@@ -82,9 +82,9 @@ export default function App(props) {
           }}
         >
           <Typography
-            variant="h6"
+            variant="h5"
             color="inherit"
-            className="flex items-end"
+            className="flex items-end !font-[modak]"
             noWrap
           >
             <LightModeIcon fontSize={"large"} className="mr-3" />
@@ -102,7 +102,7 @@ export default function App(props) {
                 fontSize: "1rem",
               }}
             >
-              Hello, {userName}
+              {userName}
               <span className="ml-2 text-4xl">
                 <AccountCircleIcon className="text-white" fontSize="inherit" />
               </span>
