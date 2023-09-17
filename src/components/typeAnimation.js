@@ -3,7 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const TypeWriting = () => {
   return (
-    <Typography variant="h4" type="left" align="center" color="#FB8500" className="flex items-end !font-[modak]" noWrap>
+    <Typography variant="h4" type="left" align="center" color="#FB8500" fontFamily="Modak" noWrap>
       <TypeAnimation
         sequence={[
           "Beyond the Typical Newsletter!",
